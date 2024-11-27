@@ -69,3 +69,30 @@ PORT   STATE SERVICE
 | smtp-vuln-cve2010-4344: 
 |_  The SMTP server is not Exim: NOT VULNERABLE
 ```
+
+
+### SMTP Port Scan - Open Relay Scan
+```
+PORT   STATE SERVICE
+25/tcp open  smtp
+| smtp-open-relay: Server is an open relay (16/16 tests)
+|  MAIL FROM:<> -> RCPT TO:<relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@nmap.scanme.org> -> RCPT TO:<relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@InFreight> -> RCPT TO:<relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<relaytest%nmap.scanme.org@[10.129.132.174]>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<relaytest%nmap.scanme.org@InFreight>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<"relaytest@nmap.scanme.org">
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<"relaytest%nmap.scanme.org">
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<relaytest@nmap.scanme.org@[10.129.132.174]>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<"relaytest@nmap.scanme.org"@[10.129.132.174]>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<relaytest@nmap.scanme.org@InFreight>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<@[10.129.132.174]:relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<@InFreight:relaytest@nmap.scanme.org>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<nmap.scanme.org!relaytest>
+|  MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<nmap.scanme.org!relaytest@[10.129.132.174]>
+|_ MAIL FROM:<antispam@[10.129.132.174]> -> RCPT TO:<nmap.scanme.org!relaytest@InFreight>
+
+```
+
+
