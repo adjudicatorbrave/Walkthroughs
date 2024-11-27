@@ -1,4 +1,3 @@
-
 # FTP Exercise from Footprinting Module
 
 ## NMAP Scan Results
