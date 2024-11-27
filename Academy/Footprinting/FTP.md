@@ -27,10 +27,23 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ### Vuln Scan Results
 ```
+PORT   STATE SERVICE
+21/tcp open  ftp
+22/tcp open  ssh
 ```
 
 ### Auth Scan Results
 ```
-No Results
+PORT   STATE SERVICE
+21/tcp open  ftp
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_-rw-r--r--   1 ftpuser  ftpuser        39 Nov  8  2021 flag.txt
+22/tcp open  ssh
+| ssh-auth-methods: 
+|   Supported authentication methods: 
+|     publickey
+|_    password
+| ssh-publickey-acceptance: 
+|_  Accepted Public Keys: No public keys accepted
 ```
 
