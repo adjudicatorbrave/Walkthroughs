@@ -37,3 +37,73 @@
 
   
 * Host Iis Unbuntu and name is NIXHARD
+
+
+## NMAP Scan Results
+
+### TCP Scan Results
+```
+PORT    STATE SERVICE
+22/tcp  open  ssh
+110/tcp open  pop3
+143/tcp open  imap
+993/tcp open  imaps
+995/tcp open  pop3s
+```
+
+### SYN Scan Results
+```
+PORT    STATE SERVICE
+22/tcp  open  ssh
+110/tcp open  pop3
+143/tcp open  imap
+993/tcp open  imaps
+995/tcp open  pop3s
+```
+
+### Version Scan Results
+```
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 3f:4c:8f:10:f1:ae:be:cd:31:24:7c:a1:4e:ab:84:6d (RSA)
+|   256 7b:30:37:67:50:b9:ad:91:c0:8f:f7:02:78:3b:7c:02 (ECDSA)
+|_  256 88:9e:0e:07:fe:ca:d0:5c:60:ab:cf:10:99:cd:6c:a7 (ED25519)
+110/tcp open  pop3     Dovecot pop3d
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=NIXHARD
+| Subject Alternative Name: DNS:NIXHARD
+| Not valid before: 2021-11-10T01:30:25
+|_Not valid after:  2031-11-08T01:30:25
+|_pop3-capabilities: PIPELINING AUTH-RESP-CODE TOP UIDL CAPA SASL(PLAIN) RESP-CODES STLS USER
+143/tcp open  imap     Dovecot imapd (Ubuntu)
+|_imap-capabilities: capabilities ENABLE Pre-login ID LITERAL+ more IDLE SASL-IR post-login listed IMAP4rev1 OK STARTTLS AUTH=PLAINA0001 have LOGIN-REFERRALS
+| ssl-cert: Subject: commonName=NIXHARD
+| Subject Alternative Name: DNS:NIXHARD
+| Not valid before: 2021-11-10T01:30:25
+|_Not valid after:  2031-11-08T01:30:25
+|_ssl-date: TLS randomness does not represent time
+993/tcp open  ssl/imap Dovecot imapd (Ubuntu)
+|_imap-capabilities: capabilities ENABLE Pre-login ID LITERAL+ AUTH=PLAINA0001 more IDLE post-login IMAP4rev1 listed SASL-IR OK have LOGIN-REFERRALS
+| ssl-cert: Subject: commonName=NIXHARD
+| Subject Alternative Name: DNS:NIXHARD
+| Not valid before: 2021-11-10T01:30:25
+|_Not valid after:  2031-11-08T01:30:25
+|_ssl-date: TLS randomness does not represent time
+995/tcp open  ssl/pop3 Dovecot pop3d
+|_pop3-capabilities: SASL(PLAIN) USER UIDL CAPA AUTH-RESP-CODE PIPELINING TOP RESP-CODES
+| ssl-cert: Subject: commonName=NIXHARD
+| Subject Alternative Name: DNS:NIXHARD
+| Not valid before: 2021-11-10T01:30:25
+|_Not valid after:  2031-11-08T01:30:25
+|_ssl-date: TLS randomness does not represent time
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+### Vuln Scan Results
+```
+```
+
+### Auth Scan Results
+```
+```
