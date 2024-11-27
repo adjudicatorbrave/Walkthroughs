@@ -55,9 +55,20 @@ Network Distance: 2 hops
 
 ### Vuln Scan Results
 ```
+PORT     STATE SERVICE
+1521/tcp open  oracle
 ```
 
 ### Auth Scan Results
 ```
+PORT     STATE SERVICE
+1521/tcp open  oracle
+```
 
+### Oracle SID Bruteforce
+```
+PORT     STATE SERVICE    VERSION
+1521/tcp open  oracle-tns Oracle TNS listener 11.2.0.2.0 (unauthorized)
+| oracle-sid-brute: 
+|_  XE
 ```
