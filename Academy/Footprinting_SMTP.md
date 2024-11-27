@@ -30,3 +30,12 @@ PORT      STATE SERVICE
 3306/tcp  open  mysql
 33060/tcp open  mysqlx
 ```
+### SMTP Port Scan - Vulns
+
+```
+
+PORT   STATE SERVICE
+25/tcp open  smtp
+| smtp-vuln-cve2010-4344: 
+|_  The SMTP server is not Exim: NOT VULNERABLE
+```
