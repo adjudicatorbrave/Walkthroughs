@@ -87,8 +87,55 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ### Vuln Scan Results
 ```
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+53/tcp   open  domain
+2121/tcp open  ccproxy-ftp
 ```
 
 ### Auth Scan Results
 ```
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+| ssh-auth-methods: 
+|   Supported authentication methods: 
+|     publickey
+|_    password
+| ssh-publickey-acceptance: 
+|_  Accepted Public Keys: No public keys accepted
+53/tcp   open  domain
+2121/tcp open  ccproxy-ftp
+```
+
+## Bash History File 
+
+```
+ls -al
+mkdir ssh
+cd ssh/
+echo "test" > id_rsa
+id
+ssh-keygen -t rsa -b 4096
+cd ..
+rm -rf ssh/
+ls -al
+cd .ssh/
+cat id_rsa
+ls a-l
+ls -al
+cat id_rsa.pub >> authorized_keys
+cd ..
+cd /home
+cd ceil/
+ls -l
+ls -al
+mkdir flag
+cd flag/
+touch flag.txt
+vim flag.txt 
+cat flag.txt 
+ls -al
+mv flag/flag.txt .
 ```
