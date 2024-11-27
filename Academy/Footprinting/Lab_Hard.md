@@ -102,8 +102,26 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ### Vuln Scan Results
 ```
+PORT    STATE SERVICE
+22/tcp  open  ssh
+110/tcp open  pop3
+143/tcp open  imap
+993/tcp open  imaps
+995/tcp open  pop3s
 ```
 
 ### Auth Scan Results
 ```
+PORT    STATE SERVICE
+22/tcp  open  ssh
+| ssh-publickey-acceptance: 
+|_  Accepted Public Keys: No public keys accepted
+| ssh-auth-methods: 
+|   Supported authentication methods: 
+|     publickey
+|_    password
+110/tcp open  pop3
+143/tcp open  imap
+993/tcp open  imaps
+995/tcp open  pop3s
 ```
