@@ -1,0 +1,36 @@
+## Archetype
+    - Initial nmap scan showed:
+        - PORT      STATE SERVICE
+        - 135/tcp   open  msrpc
+        - 139/tcp   open  netbios-ssn - SMB over Netbios
+        - 445/tcp   open  microsoft-ds - SMB
+        - 1433/tcp  open  ms-sql-s Microsoft SQL Server 2017 14.00.1000
+        - 5985/tcp  open  http     Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+        - 47001/tcp open  http     Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+        - 49664/tcp open  msrpc    Microsoft Windows RPC
+        - 49665/tcp open  msrpc    Microsoft Windows RPC
+        - 49666/tcp open  msrpc    Microsoft Windows RPC
+        - 49667/tcp open  msrpc    Microsoft Windows RPC
+        - 49668/tcp open  msrpc    Microsoft Windows RPC
+        - 49669/tcp open  msrpc    Microsoft Windows RPC
+        - Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+    - There is no actual website on http based ports. Browser and gobuster showed that.
+    - Examining SMB
+        - smbclient -N -L \\\\{TARGET_IP}\\
+            - -N : No password
+            - -L : This option allows you to look at what services are available on a server
+        - SMB had several shares visible.
+        - The backups share had a production config in it.
+        - smbclient -N \\\\{TARGET_IP}\\backups
+        - I fetched the config file and it showed sql credentials I could use.
+    - Getting user and root flags.
+        - See [Archetype Writeup](https://drive.google.com/file/d/1QqA7zyYuE30vs30f4QhM3ZfjLOy2F_yI/view?usp=drive_link)
+        - User flag:
+            - Use impacket and sqlclient to shell access.
+            - Using shell access to initiate download of tools and then set up reverse shell access.
+            - Use reverse shell to find user flag.
+        - Root flag
+            - Now that we have user command prompt, use it to download additional software which can be used to gain admin access.
+            - Admin credentials were found in history file.
+            - Use admin credentials to gain shell access via impacket and then initiate reverse shell access
+            - Use reverse shell to find root flag.
