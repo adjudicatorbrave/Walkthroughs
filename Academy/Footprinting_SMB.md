@@ -92,3 +92,46 @@ Host script results:
 |_nbstat: NetBIOS name: DEVSMB, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
 |_clock-skew: 14s
 ```
+
+## Authentication Scan Results
+```
+PORT      STATE  SERVICE
+21/tcp    open   ftp
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_-rw-r--r--   1 ftpuser  ftpuser        39 Nov  8  2021 flag.txt
+22/tcp    open   ssh
+| ssh-publickey-acceptance: 
+|_  Accepted Public Keys: No public keys accepted
+| ssh-auth-methods: 
+|   Supported authentication methods: 
+|     publickey
+|_    password
+111/tcp   open   rpcbind
+139/tcp   open   netbios-ssn
+445/tcp   open   microsoft-ds
+2049/tcp  open   nfs
+40551/tcp open   unknown
+45283/tcp open   unknown
+54233/tcp closed unknown
+58999/tcp open   unknown
+```
+
+## Vulnerability Scan Results
+```
+PORT      STATE  SERVICE
+21/tcp    open   ftp
+22/tcp    open   ssh
+111/tcp   open   rpcbind
+139/tcp   open   netbios-ssn
+445/tcp   open   microsoft-ds
+2049/tcp  open   nfs
+40551/tcp open   unknown
+45283/tcp open   unknown
+54233/tcp closed unknown
+58999/tcp open   unknown
+
+Host script results:
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: ERROR: Server returned less data than it was supposed to (one or more fields are missing); aborting [9]
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: ERROR: Server returned less data than it was supposed to (one or more fields are missing); aborting [9]
+|_smb-vuln-ms10-054: false
+```
