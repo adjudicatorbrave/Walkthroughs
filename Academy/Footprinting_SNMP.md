@@ -39,7 +39,7 @@ PORT    STATE  SERVICE
 162/udp closed snmptrap
 ```
 
-### SNMP Walkout Results
+## SNMP Walkout Results
 
 ```
 iso.3.6.1.2.1.1.1.0 = STRING: "Linux NIX02 5.4.0-90-generic #101-Ubuntu SMP Fri Oct 15 20:00:55 UTC 2021 x86_64"
