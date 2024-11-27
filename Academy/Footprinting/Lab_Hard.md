@@ -125,3 +125,21 @@ PORT    STATE SERVICE
 993/tcp open  imaps
 995/tcp open  pop3s
 ```
+### UDP Scan Results
+```
+PORT    STATE         SERVICE
+68/udp  open|filtered dhcpc
+161/udp open          snmp
+```
+
+### UDP SNMP Version Scan Results
+```
+PORT    STATE SERVICE VERSION
+161/udp open  snmp    net-snmp; net-snmp SNMPv3 server
+| snmp-info: 
+|   enterprise: net-snmp
+|   engineIDFormat: unknown
+|   engineIDData: 5b99e75a10288b6100000000
+|   snmpEngineBoots: 11
+|_  snmpEngineTime: 1h45m28s
+```
