@@ -5,10 +5,12 @@
 
 ### TCP Scan Results
 ```
+No results?
 ```
 
 ### SYN Scan Results
 ```
+No results?
 ```
 
 ### Version Scan Results
