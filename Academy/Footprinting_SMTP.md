@@ -30,10 +30,27 @@ PORT      STATE SERVICE
 3306/tcp  open  mysql
 33060/tcp open  mysqlx
 ```
+### SMTP Port Scan - Authentication Scan
+
+```
+PORT   STATE SERVICE
+25/tcp open  smtp
+| smtp-enum-users: 
+|   root
+|   admin
+|   administrator
+|   webadmin
+|   sysadmin
+|   netadmin
+|   guest
+|   user
+|   web
+|_  test
+```
+
 ### SMTP Port Scan - Vulns
 
 ```
-
 PORT   STATE SERVICE
 25/tcp open  smtp
 | smtp-vuln-cve2010-4344: 
